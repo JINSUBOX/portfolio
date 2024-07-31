@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const ProjectsContainer = styled.div`
-	padding-top: 60px;
+	padding: 60px 0;
 	text-align: left;
 	width: 85%;
 	margin: auto;

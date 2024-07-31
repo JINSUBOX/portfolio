@@ -4,14 +4,8 @@ import styled from "styled-components";
 import backgroundImage from "../assets/portfolio_background.png";
 
 const HomeContainer = styled.div`
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	background: url(${backgroundImage}) center center no-repeat;
 	background-size: cover;
-	z-index: -1;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -23,9 +17,6 @@ const HomeContainer = styled.div`
 `;
 
 const Title = styled.h2`
-	margin: 0;
-	padding: 0;
-
 	span:nth-child(3) {
 		font-weight: bold;
 		margin-top: 0.3em;

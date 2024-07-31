@@ -18,12 +18,13 @@ const AboutContainer = styled.div`
 	align-items: center;
 	padding-top: 60px;
 	margin: auto;
+	width: 100vw;
+	height: 100vh;
 
 	@media (min-width: 768px) {
 		flex-direction: row;
 		align-items: center;
 		justify-content: center;
-		width: 100vw;
 	}
 `;
 
