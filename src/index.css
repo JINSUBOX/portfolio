@@ -8,7 +8,7 @@
 	--bg-color:: #ffffff;
     --main-text-color: #555;
 	--base-font-size: 1.25vw;
-	--text-font: "Noto Sans KR",serif;
+	--text-font: "Noto Sans KR", sans-serif;
 	--height-space: 20vh;
     --base-font-size: 1.25vw;
     --gutter-size: 2vw;
@@ -27,6 +27,7 @@ body {
 
 .section {
 	height: 100%;
+	max-height: max-content;
 	display: flex;
 	justify-content: center;
 	text-align: center;
