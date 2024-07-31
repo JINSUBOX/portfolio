@@ -1,11 +1,18 @@
 // components/Contact.js
 import React from "react";
-import Layout from "./Layout";
 import styled from "styled-components";
+
+const ContactContainer = styled.div`
+	padding-top: 60px;
+	margin: 50px;
+	width: 85%;
+	margin: auto;
+`;
 
 const Heading = styled.h1`
 	font-size: 36px;
 	margin-bottom: 20px;
+	color: #555;
 `;
 
 const ContactForm = styled.form`
@@ -25,19 +32,19 @@ const TextArea = styled.textarea`
 
 const Button = styled.button`
 	padding: 10px 20px;
-	background-color: #007bff;
+	background-color: #555;
 	color: #fff;
 	border: none;
 	cursor: pointer;
 
 	&:hover {
-		background-color: #0056b3;
+		background-color: #999;
 	}
 `;
 
 const Contact = () => {
 	return (
-		<Layout>
+		<ContactContainer>
 			<Heading>Contact Me</Heading>
 			<ContactForm>
 				<Input type="text" placeholder="Name" />
@@ -45,7 +52,7 @@ const Contact = () => {
 				<TextArea placeholder="Message" rows="5" />
 				<Button>Send</Button>
 			</ContactForm>
-		</Layout>
+		</ContactContainer>
 	);
 };
 

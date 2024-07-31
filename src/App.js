@@ -1,23 +1,27 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import GlobalStyles from "./styles/GlobalStyles";
+import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import "./index.css";
 
 function App() {
-  return (
-    <Router>
-      <GlobalStyles />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
-  );
+	return (
+		<div>
+			<Header />
+			<div className="section" id="home">
+				<Home />
+			</div>
+			<div className="section" id="about">
+				<About />
+			</div>
+			<div className="section" id="projects">
+				<Projects />
+			</div>
+			<Footer />
+		</div>
+	);
 }
 
 export default App;

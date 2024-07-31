@@ -1,46 +1,64 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
+import { Link } from "react-scroll";
+import MobileNavbar from "./MobileNavbar";
+import DesktopNavbar from "./DesktopNavbar";
 
 const StyledHeader = styled.header`
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background-color: #333;
+	width: 100vw;
+	min-height: 60px;
 	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 999;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	box-sizing: border-box;
-
-	@media (min-width: 768px) {
-		flex-direction: row;
-		justify-content: space-between;
-		height: 60px;
-		padding: 0 20px;
-	}
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: ${(props) =>
+		props.$isOpaque ? "#C5C7C6" : "rgba(255, 255, 255, 0)"};
+	transition: background 0.3s ease;
+	z-index: 99;
 
 	.logo {
-		font-size: 24px;
-		color: #fff;
+		flex-basis: calc(100% / 4);
+		font-size: 1.2em;
+		font-weight: bold;
 		text-decoration: none;
-		margin: 10px 0;
+		text-transform: uppercase;
+		// overflow: hidden;
+	}
 
-		@media (min-width: 1024px) {
-			font-size: 36px;
-		}
+	@media ${(props) => props.theme.laptop} {
+	}
+
+	@media ${(props) => props.theme.mobile} {
 	}
 `;
 const Header = () => {
+	const [isOpaque, setIsOpaque] = useState(false);
+
+	const handleScroll = () => {
+		if (window.scrollY > window.innerHeight) {
+			setIsOpaque(true);
+		} else {
+			setIsOpaque(false);
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, []);
+
 	return (
-		<StyledHeader>
-			<Link to="/" className="logo">
-				박진수
+		<StyledHeader $isOpaque={isOpaque}>
+			<Link to="home" smooth={true} duration={500} className="logo">
+				Pak's portfolio
 			</Link>
-			<Navbar />
+			<div className="navbar-container">
+				<DesktopNavbar />
+				<MobileNavbar $isOpaque={isOpaque} />
+			</div>
 		</StyledHeader>
 	);
 };
