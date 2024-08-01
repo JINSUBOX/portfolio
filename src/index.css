@@ -1,6 +1,5 @@
 /* index */
 @import "./styles/reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 #root {
 	width: 100%;
@@ -8,17 +7,18 @@
 	--bg-color:: #ffffff;
     --main-text-color: #555;
 	--base-font-size: 1.25vw;
-	--text-font: "Noto Sans KR", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+	"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+	'Noto Sans KR','Nanum Gothic', sans-serif;
+		-webkit-font-smoothing: antialiased;
+  		-moz-osx-font-smoothing: grayscale;
 	--height-space: 20vh;
     --base-font-size: 1.25vw;
     --gutter-size: 2vw;
 }
 
 body {
-    font-family: var(--text-font);
     font-size: var(--base-font-size);
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
     background: var(--bg-color);
     color: var(--main-text-color);
     line-height: 1.2;
