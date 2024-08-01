@@ -20,6 +20,7 @@ const StyledHeader = styled.header`
 	.logo {
 		flex-basis: calc(100% / 4);
 		font-size: 1.2em;
+		color: #444;
 		font-weight: bold;
 		text-decoration: none;
 		text-transform: uppercase;
